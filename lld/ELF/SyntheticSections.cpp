@@ -2827,11 +2827,11 @@ void DebugNamesBaseSection::parseDebugNames(
                   Twine(": found DWARF64, which is currently unsupported"));
       return;
     }
-    if (nd.hdr.Version != 5) {
+    /*if (nd.hdr.Version != 5) {
       errorOrWarn(toString(namesSec.sec) + Twine(": unsupported version: ") +
                   Twine(nd.hdr.Version));
       return;
-    }
+    } */
     uint32_t dwarfSize = dwarf::getDwarfOffsetByteSize(DwarfFormat::DWARF32);
     DWARFDebugNames::DWARFDebugNamesOffsets locs = ni.getOffsets();
     if (locs.EntriesBase > namesExtractor.getData().size()) {
